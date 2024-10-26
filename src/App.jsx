@@ -16,6 +16,7 @@ import Order from "./pages/Order";
 import Payment from "./pages/Payment";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import DarkModeProvider from "./context/DarkModeContext";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -48,6 +49,7 @@ const App = () => {
               <Route path="foods" element={<Foods />} />
               <Route path="users" element={<Users />} />
               <Route path="account" element={<Account />} />
+              <Route path="contact" element={<Contact />} />
             </Route>
             <Route path="login" element={<Login />} />
             <Route path="*" element={<PageNotFound />} />

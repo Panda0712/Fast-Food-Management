@@ -7,6 +7,7 @@ import {
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 
 import styled from "styled-components";
+import { LuContact } from "react-icons/lu";
 
 const NavList = styled.ul`
   display: flex;
@@ -79,6 +80,12 @@ const MainNav = () => {
           <StyledNavLink to="/users">
             <HiOutlineUsers />
             <span>Khách Hàng</span>
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/contact">
+            <LuContact />
+            <span>Ý kiến</span>
           </StyledNavLink>
         </li>
       </NavList>
