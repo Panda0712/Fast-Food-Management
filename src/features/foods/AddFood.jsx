@@ -17,20 +17,4 @@ const AddFood = () => {
   );
 };
 
-// const AddFood = () => {
-//   const [isOpenModal, setIsOpenModal] = useState(false);
-
-//   return (
-//     <div>
-//       <Button onClick={() => setIsOpenModal((show) => !show)}>Thêm món</Button>
-
-//       {isOpenModal && (
-//         <Modal onClose={() => setIsOpenModal(false)}>
-//           <CreateFoodForm onCloseModal={() => setIsOpenModal(false)} />
-//         </Modal>
-//       )}
-//     </div>
-//   );
-// };
-
 export default AddFood;

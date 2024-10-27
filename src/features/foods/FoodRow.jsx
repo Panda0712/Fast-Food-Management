@@ -43,7 +43,15 @@ const CabinRow = ({ food }) => {
   const { isDeleting, deleteFood } = useDeleteFood();
   const { createFood } = useCreateFood();
 
-  const { id: foodId, name, regularPrice, discount, image, description } = food;
+  const {
+    id: foodId,
+    name,
+    regularPrice,
+    discount,
+    image,
+    category,
+    description,
+  } = food;
 
   function handleDuplicate() {
     createFood({
@@ -51,6 +59,7 @@ const CabinRow = ({ food }) => {
       regularPrice,
       discount,
       image,
+      category,
       description,
     });
   }

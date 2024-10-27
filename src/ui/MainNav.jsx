@@ -79,7 +79,7 @@ const MainNav = () => {
         <li>
           <StyledNavLink to="/users">
             <HiOutlineUsers />
-            <span>Khách Hàng</span>
+            <span>Tài khoản</span>
           </StyledNavLink>
         </li>
         <li>

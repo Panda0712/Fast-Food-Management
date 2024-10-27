@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 import styled from "styled-components";
 
 const StyledSelect = styled.select`
@@ -18,7 +17,7 @@ const StyledSelect = styled.select`
 
 const Select = ({ options, value, onChange, ...props }) => {
   return (
-    <StyledSelect onChange={onChange} value={value} {...props}>
+    <StyledSelect value={value} onChange={onChange} {...props}>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
