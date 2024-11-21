@@ -1,7 +1,10 @@
 import supabase, { supabaseUrl } from "./supabase";
 
 export async function getFoods() {
-  const { data, error } = await supabase.from("foods").select("*");
+  const { data, error } = await supabase
+    .from("foods")
+    .select("*")
+    .order("created_at", { ascending: false });
 
   if (error) {
     console.error(error);

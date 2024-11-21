@@ -2,7 +2,10 @@ import { PAGE_SIZE } from "../utils/constants";
 import supabase from "./supabase";
 
 export async function getContact({ page }) {
-  let query = supabase.from("contact").select("*", { count: "exact" });
+  let query = supabase
+    .from("contact")
+    .select("*", { count: "exact" })
+    .order("created_at", { ascending: false });
 
   if (page) {
     const from = (page - 1) * PAGE_SIZE;
