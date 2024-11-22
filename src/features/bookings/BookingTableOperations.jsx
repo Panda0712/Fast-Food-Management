@@ -11,7 +11,6 @@ function BookingTableOperations() {
           { value: "all", label: "Tất cả" },
           { value: "paid", label: "Đã thanh toán" },
           { value: "unpaid", label: "Chưa thanh toán" },
-          { value: "unconfirmed", label: "Chưa xác nhận" },
         ]}
       />
 

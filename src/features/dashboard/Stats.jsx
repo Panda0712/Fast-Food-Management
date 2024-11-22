@@ -1,5 +1,6 @@
-import { HiOutlineBriefcase, HiOutlineChartBar } from "react-icons/hi";
-import { HiOutlineBanknotes, HiOutlineCalendarDays } from "react-icons/hi2";
+/* eslint-disable react/prop-types */
+import { HiOutlineBriefcase } from "react-icons/hi";
+import { HiOutlineBanknotes } from "react-icons/hi2";
 import { formatCurrency } from "../../utils/helpers";
 
 import Stat from "./Stat";

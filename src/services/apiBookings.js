@@ -9,7 +9,10 @@ export async function getOrders({ filter, sortBy, page }) {
     .order("created_at", { ascending: false });
 
   // FILTER
-  if (filter) query = query.eq(filter.field, filter.value);
+  if (filter)
+    query = query
+      .eq(filter.field, filter.value)
+      .order("created_at", { ascending: false });
 
   // SORT
   if (sortBy)
@@ -62,6 +65,51 @@ export async function getOrdersAfterDate(date) {
   return data;
 }
 
+export async function getOrdersForDate(date) {
+  const localDate = new Date(date);
+
+  const startDate = new Date(
+    Date.UTC(
+      localDate.getFullYear(),
+      localDate.getMonth(),
+      localDate.getDate(),
+      0,
+      0,
+      0,
+      0
+    )
+  );
+
+  const endDate = new Date(
+    Date.UTC(
+      localDate.getFullYear(),
+      localDate.getMonth(),
+      localDate.getDate(),
+      23,
+      59,
+      59,
+      999
+    )
+  );
+
+  const { data, error } = await supabase
+    .from("orders")
+    .select("created_at, foodPrice, totalPrice")
+    .gte("created_at", startDate.toISOString())
+    .lte("created_at", endDate.toISOString())
+    .order("created_at", { ascending: true });
+
+  if (error) {
+    console.error(error);
+    throw new Error("Không thể tải các đơn hàng!");
+  }
+
+  return data.map((order) => ({
+    ...order,
+    created_at: new Date(order.created_at).toISOString(),
+  }));
+}
+
 export async function getStaysAfterDate(date) {
   const { data, error } = await supabase
     .from("orders")
@@ -93,7 +141,6 @@ export async function updateOrder(id, obj) {
 }
 
 export async function deleteOrder(id) {
-  // REMEMBER RLS POLICIES
   const { data, error } = await supabase.from("orders").delete().eq("id", id);
 
   if (error) {
