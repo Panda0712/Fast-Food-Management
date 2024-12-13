@@ -138,7 +138,11 @@ const SalesChart = ({ orders, date }) => {
             const orderDate = new Date(order.created_at);
             return orderDate.getHours() === i;
           })
-          .reduce((acc, cur) => acc + cur.totalPrice, 0) || 0,
+          .reduce(
+            (acc, cur) =>
+              cur.status === "paid" ? acc + cur.totalPrice : acc + 0,
+            0
+          ) || 0,
     };
   });
 

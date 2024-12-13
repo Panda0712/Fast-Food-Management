@@ -6,9 +6,15 @@ import { formatCurrency } from "../../utils/helpers";
 import Stat from "./Stat";
 
 const Stats = ({ orders }) => {
-  const numOrders = orders.length;
+  const numOrders = orders.filter((o) => o.status === "paid").length;
 
-  const sales = orders.reduce((acc, order) => acc + order.totalPrice, 0);
+  console.log(orders);
+
+  const sales = orders.reduce(
+    (acc, order) =>
+      order.status === "paid" ? acc + order.totalPrice : acc + 0,
+    0
+  );
 
   return (
     <>

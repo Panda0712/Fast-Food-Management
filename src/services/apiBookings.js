@@ -94,7 +94,7 @@ export async function getOrdersForDate(date) {
 
   const { data, error } = await supabase
     .from("orders")
-    .select("created_at, foodPrice, totalPrice")
+    .select("created_at, foodPrice, totalPrice,status")
     .gte("created_at", startDate.toISOString())
     .lte("created_at", endDate.toISOString())
     .order("created_at", { ascending: true });
