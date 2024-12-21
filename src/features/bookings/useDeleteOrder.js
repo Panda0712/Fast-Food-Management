@@ -9,7 +9,7 @@ export function useDeleteOrder() {
   const { isLoading: isDeletingOrder, mutate: deleteOrder } = useMutation({
     mutationFn: (id) => deleteOrderApi(id),
     onSuccess: () => {
-      toast.success("Xóa món thành công");
+      toast.success("Xóa đơn hàng thành công");
 
       queryClient.invalidateQueries({
         queryKey: ["orders"],
