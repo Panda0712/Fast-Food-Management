@@ -16,13 +16,13 @@ This project provides a full-featured management interface for a fast-food opera
 
 ## Main features
 
-- **Admin dashboard:** manage foods, orders/bookings, users, and contacts.
-- **Food management:** add/update/delete foods and manage metadata.
-- **Order & booking management:** list, filter, update status, and view details.
-- **Authentication** helpers and user management components.
-- **Payment** page scaffold and integration helpers.
-- **Real-time-ish reporting:** charts and dashboard stats using `recharts`.
-- **Reusable UI primitives:** buttons, forms, tables, modals.
+- Admin dashboard: manage foods, orders/bookings, users, and contacts.
+- Food management: add/update/delete foods and manage metadata.
+- Order & booking management: list, filter, update status, and view details.
+- Authentication helpers and user management components.
+- Payment page scaffold and integration helpers.
+- Real-time-ish reporting: charts and dashboard stats using `recharts`.
+- Reusable UI primitives: buttons, forms, tables, modals.
 
 ## Tech stack
 
