@@ -41,7 +41,7 @@ This project provides a full-featured management interface for a fast-food opera
 - React Router Dom for routing
 - React Hook Form for form handling
 - TanStack Query (React Query) for server state and caching
-- Supabase client (included in `src/services/supabase.js`) for data/auth (optional)
+- Supabase client for data/auth
 - Recharts for charts and visualizations
 
 ## Repository structure
